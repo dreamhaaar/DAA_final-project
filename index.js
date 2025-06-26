@@ -46,7 +46,7 @@ app.get("/dashboard.html", (req, res) => {
   res.sendFile(path.join(__dirname, "private", "dashboard.html"));
 });
 
-module.exports = app;
+
 
 
 app.get("/guide.html", (req, res) => {
