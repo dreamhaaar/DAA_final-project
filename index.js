@@ -42,10 +42,8 @@ req.session.user = data.user;  // using express-session
 });
 
 app.get("/dashboard.html", (req, res) => {
-  // Use token-based auth (e.g. from cookies or headers)
-  res.sendFile(path.join(__dirname, "private", "dashboard.html"));
+  res.sendFile(path.join(__dirname, "..", "private", "dashboard.html"));
 });
-
 
 
 
