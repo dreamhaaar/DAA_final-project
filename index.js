@@ -42,13 +42,12 @@ req.session.user = data.user;  // using express-session
 });
 
 app.get("/dashboard.html", (req, res) => {
-  if (!req.session.user) {
-    return res.redirect("/login.html");
-  }
-res.sendFile(path.join(__dirname, "private", "dashboard.html"));
-
-
+  // Use token-based auth (e.g. from cookies or headers)
+  res.sendFile(path.join(__dirname, "private", "dashboard.html"));
 });
+
+module.exports = app;
+
 
 app.get("/guide.html", (req, res) => {
   if (!req.session.user) {
@@ -162,6 +161,4 @@ app.use((req, res, next) => {
 });
 
 
-app.listen(port, () => {
-  console.log(`Port ${port} running...`);
-});
+module.exports = app;
