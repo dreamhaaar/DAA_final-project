@@ -4,10 +4,7 @@
     { "src": "api/index.js", "use": "@vercel/node" }
   ],
   "routes": [
-    // All API routes handled by your Node function
     { "src": "/api/.*", "dest": "/api/index.js" },
-
-    // Let static files like dashboard.html be served directly
     { "src": "/(.*)", "dest": "/$1" }
   ]
 }
